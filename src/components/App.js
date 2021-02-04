@@ -16,6 +16,7 @@ const [activities, setActivities] = useState([])
 // Filter States
 const [currentStorytime, setCurrentStorytime] = useState(null)
 const [currentActivity, setCurrentActivity] = useState(null)
+const [query, setQuery] = useState("")
 
 
 //------------Initial Fetches------------//
@@ -38,21 +39,36 @@ useEffect(() => {
   })
 }, [])
 
+//--------------Search--------------//
+
+const displayedStorytimes = storytimes 
+  .filter((storytime) => {
+    return storytime.title.toLowerCase().includes(query.toLowerCase())
+  })
+
+const displayedActivities = activities 
+  .filter((activity) => {
+    return activity.title.toLowerCase().includes(query.toLowerCase())
+  })
+
 //--------------Return--------------//
 
   return (
     <div className="big-container">
-      <Header />
+      <Header 
+        query={query} 
+        setQuery={setQuery} 
+      />
       <Switch>
         <Route exact path='/storytimes'>
           <StorytimeList 
-            storytimes = {storytimes}
+            storytimes = {displayedStorytimes}
             setCurrentStorytime = {setCurrentStorytime}
           />
         </Route>
         <Route exact path='/activities'>
           <ActivityList 
-            activities = {activities}
+            activities = {displayedActivities}
             setCurrentActivity = {setCurrentActivity}
           />
         </Route>

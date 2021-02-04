@@ -4,7 +4,7 @@ import Search from './Search';
 import Categories from './Categories';
 
 
-function Header() {
+function Header({ query, setQuery }) {
 
     return (
         <header>
@@ -36,7 +36,8 @@ function Header() {
                 </NavLink>
             </nav>
             <Search 
-            
+                query = {query} 
+                setQuery = {setQuery}
             />
         </header>
     )
