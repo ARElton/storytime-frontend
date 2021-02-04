@@ -7,6 +7,8 @@ import '../App.css';
 
 function App() {
 
+//--------------States--------------//
+
 // Initial States
 const [storytimes, setStorytimes] = useState([])
 const [activities, setActivities] = useState([])
@@ -17,6 +19,7 @@ const [currentActivity, setCurrentActivity] = useState(null)
 
 
 //------------Initial Fetches------------//
+
 // GET STORYTIMES
 useEffect(() => {
   fetch('http://localhost:3000/storytimes')
@@ -35,6 +38,7 @@ useEffect(() => {
   })
 }, [])
 
+//--------------Return--------------//
 
   return (
     <div className="big-container">
