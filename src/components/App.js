@@ -3,7 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import StorytimeList from './StorytimeList'
 import ActivityList from './ActivityList'
+import Profile from "./Profile";
 import '../App.css';
+
 
 function App() {
 
@@ -20,6 +22,7 @@ const [query, setQuery] = useState("")
 
 // Login States
 const [currentUser, setCurrentUser] = useState(null)
+const [currentChild, setCurrentChild] = useState(null)
 
 
 //------------Initial Fetches------------//
@@ -54,7 +57,18 @@ const displayedActivities = activities
     return activity.title.toLowerCase().includes(query.toLowerCase())
   })
 
-//--------------Manual Login/Logout--------------//
+//--------------Login/Logout--------------//
+
+//---------FOR DEVELOPMENT---------//
+
+  // auto-login
+  useEffect(() => {
+    fetch("http://localhost:3000/autologin")
+      .then((r) => r.json())
+      .then(setCurrentUser);
+  }, []);
+
+//---------FOR USE---------//
 
 // Manual Login
 function handleLogin() {
@@ -73,8 +87,8 @@ function handleLogout() {
   return (
     <div className="big-container">
       <Header 
-        query={query} 
-        setQuery={setQuery} 
+        query = {query} 
+        setQuery = {setQuery} 
       />
       <Switch>
         <Route exact path='/storytimes'>
@@ -87,6 +101,12 @@ function handleLogout() {
           <ActivityList 
             activities = {displayedActivities}
             setCurrentActivity = {setCurrentActivity}
+          />
+        </Route>
+        <Route exact path='/profile'>
+          <Profile 
+            currentUser = {currentUser}
+            setCurrentChild = {setCurrentChild}
           />
         </Route>
         <div>
