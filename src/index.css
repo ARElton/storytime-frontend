@@ -1,13 +1,172 @@
+/* Color Palatte */
+/*
+Independence #555B6E;
+Morning Blue #89b0ae;
+Powder Blue #bee3db;
+Cultured #faf9f9;
+Apricot #ffd6ba;
+*/
+
+/*----- BODY -----*/
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  background-color:faf9f9;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.big-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+/*----- HEADER -----*/
+header {
+  background:#89b0ae;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  width: 97.5%;
+  height: fit-content;
+  text-align: center;
+}
+header h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #555b6e;
+  font-size: 60px;
+  margin: 5px;
+  padding: 5px;
+}
+::placeholder {
+  color: white;
+}
+header input {
+  width: 75%;
+  height: 20px;
+  padding: 5px;
+  margin: 5px;
+  color: black;
+  background-color: #faf9f9;
+  border: .5px solid #89b0ae;
+}
+.button {
+  background-color: #555b6e;
+  margin: 1px;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+  color:#faf7f3;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  padding: 5px 20px;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #283d3b;
+}
+button:active {
+  position: relative;
+  top: 1px; 
+}
+
+/*------ StorytimeList -------*/
+.storytime-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px; 
+  margin: 0px;
+  border-radius: 10px;
+  border: .5px solid #89b0ae;
+}
+
+/*------ StorytimeTile -------*/
+.storytime-card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.storytime-card {
+  list-style-type: none;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: .5px solid #89b0ae;
+  width: 250px;
+  height: 300px;
+}
+.storytime-card-detail {
+  margin: 5px;
+  width: 250px;
+  height: 160px;
+  align-items: center;
+}
+.storytime-tile-detail h1 {
+  font-size: 2em;
+  margin: 5px;
+  margin-bottom: 1px;
+}
+.storytime-button {
+  padding: 5px 5px;
+  margin: 4px 2px;
+  border: .5px solid #283d3b;
+  background-color: #555b6e;
+  color:#faf9f9;
+	border-radius:5px;
+  cursor:pointer;
+}
+
+/*------ StorytimeView -------*/
+
+/*------ ActivityList -------*/
+.activity-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px; 
+  margin: 0px;
+  border-radius: 10px;
+  border: .5px solid #89b0ae;
+}
+
+/*------ ActivityTile -------*/
+.activity-card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.activity-card {
+  list-style-type: none;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: .5px solid #89b0ae;
+  width: 250px;
+  height: fit-content;
+}
+.activity-card-detail {
+  margin: 5px;
+  width: 250px;
+  height: 160px;
+  align-items: center;
+}
+.activity-tile-detail h1 {
+  font-size: 2em;
+  margin: 5px;
+  margin-bottom: 1px;
+}
+.activity-button {
+  padding: 5px 5px;
+  margin: 4px 2px;
+  border: .5px solid #283d3b;
+  background-color: #555b6e;
+  color:#faf9f9;
+	border-radius:5px;
+  cursor:pointer;
 }

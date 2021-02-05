@@ -8,6 +8,7 @@ function Header({ query, setQuery }) {
 
     return (
         <header>
+            <h1>storyTime</h1>
             <nav>
                 <NavLink
                     exact
@@ -20,19 +21,19 @@ function Header({ query, setQuery }) {
                     Categories
                 </button>
                 <NavLink 
-                to="/storytimes"
-                className="button">
-                Storytimes
+                    to="/storytimes"
+                    className="button">
+                    Storytimes
                 </NavLink>
                 <NavLink 
-                to="/activities"
-                className="button">
-                Activities
+                    to="/activities"
+                    className="button">
+                    Activities
                 </NavLink>
                 <NavLink 
-                to="/profile"
-                className="button">
-                Profile
+                    to="/profile"
+                    className="button">
+                    Profile
                 </NavLink>
             </nav>
             <Search 
