@@ -18,6 +18,9 @@ const [currentStorytime, setCurrentStorytime] = useState(null)
 const [currentActivity, setCurrentActivity] = useState(null)
 const [query, setQuery] = useState("")
 
+// Login States
+const [currentUser, setCurrentUser] = useState(null)
+
 
 //------------Initial Fetches------------//
 
@@ -51,6 +54,20 @@ const displayedActivities = activities
     return activity.title.toLowerCase().includes(query.toLowerCase())
   })
 
+//--------------Manual Login/Logout--------------//
+
+// Manual Login
+function handleLogin() {
+  fetch("http://localhost:3000/autologin")
+    .then((r) => r.json())
+    .then(setCurrentUser)
+}
+
+// Manual Logout
+function handleLogout() {
+  setCurrentUser(null)
+}
+
 //--------------Return--------------//
 
   return (
@@ -72,6 +89,11 @@ const displayedActivities = activities
             setCurrentActivity = {setCurrentActivity}
           />
         </Route>
+        <div>
+          <button onClick = {handleLogout}>Log out</button>
+          <button onClick = {handleLogin}>Log in</button>
+          {currentUser ? <h1>Welcome, {currentUser.name}</h1> : null}
+        </div>
       </Switch>
     </div>   
   );
