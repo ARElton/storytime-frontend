@@ -4,6 +4,8 @@ import Header from './Header';
 import StorytimeList from './StorytimeList'
 import ActivityList from './ActivityList'
 import Profile from "./Profile";
+import StorytimeView from "./StorytimeView";
+import ActivityView from "./ActivityView";
 import '../App.css';
 
 
@@ -107,6 +109,16 @@ function handleLogout() {
           <Profile 
             currentUser = {currentUser}
             setCurrentChild = {setCurrentChild}
+          />
+        </Route>
+        <Route path='/storytimes/:id'>
+          <StorytimeView 
+            storytime = {currentStorytime}
+          />
+        </Route>
+        <Route path='/activities/:id'>
+          <ActivityView 
+            activity = {currentActivity}
           />
         </Route>
         <div>
