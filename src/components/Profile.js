@@ -21,7 +21,6 @@ function Profile({ currentUser, setCurrentChild }) {
         />
     )
 
-
     return (
         <div className="child-list">
             <h1>{currentUser.name}'s Children</h1>

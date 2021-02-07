@@ -22,4 +22,4 @@ function ChildTile({ child, setCurrentChild }) {
     )
 }
 
-export default ChildTile
+export default ChildTile;

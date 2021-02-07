@@ -6,6 +6,7 @@ import ActivityList from './ActivityList'
 import Profile from "./Profile";
 import StorytimeView from "./StorytimeView";
 import ActivityView from "./ActivityView";
+import ChildView from "./ChildView"
 import '../App.css';
 
 
@@ -119,6 +120,11 @@ function handleLogout() {
         <Route path='/activities/:id'>
           <ActivityView 
             activity = {currentActivity}
+          />
+        </Route>
+        <Route path='/children/:id'>
+          <ChildView 
+            child = {currentChild}
           />
         </Route>
         <div>
