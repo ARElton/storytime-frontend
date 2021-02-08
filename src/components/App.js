@@ -17,6 +17,7 @@ function App() {
 // Initial States
 const [storytimes, setStorytimes] = useState([])
 const [activities, setActivities] = useState([])
+const [childStorytimes, setChildStorytimes] = useState([])
 
 // Filter States
 const [currentStorytime, setCurrentStorytime] = useState(null)
@@ -59,6 +60,13 @@ const displayedActivities = activities
   .filter((activity) => {
     return activity.title.toLowerCase().includes(query.toLowerCase())
   })
+
+//--------------UpdateChildStorytimes--------------//
+
+function updateChildStorytime(childStorytimeObj) {
+  setChildStorytimes([...childStorytimes, childStorytimeObj])
+}
+
 
 //--------------Login/Logout--------------//
 
@@ -115,6 +123,8 @@ function handleLogout() {
         <Route path='/storytimes/:id'>
           <StorytimeView 
             storytime = {currentStorytime}
+            currentUser = {currentUser}
+            updateChildStorytime = {updateChildStorytime}
           />
         </Route>
         <Route path='/activities/:id'>
@@ -125,6 +135,7 @@ function handleLogout() {
         <Route path='/children/:id'>
           <ChildView 
             child = {currentChild}
+            childStorytimes = {childStorytimes}
           />
         </Route>
         <div>

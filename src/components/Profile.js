@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import ChildTile from './ChildTile';
 
-function Profile({ currentUser, setCurrentChild }) {
+function Profile({ currentUser, setCurrentChild, childStorytimes }) {
 
     let history = useHistory()
     useEffect(() => {
@@ -18,6 +18,7 @@ function Profile({ currentUser, setCurrentChild }) {
         key = {child.id}
         child = {child}
         setCurrentChild = {setCurrentChild}
+        childStorytimes = {childStorytimes}
         />
     )
 

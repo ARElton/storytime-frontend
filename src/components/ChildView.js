@@ -1,7 +1,7 @@
 import React from "react";
 import StorytimeTile from './StorytimeTile'
 
-function ChildView({ child }) {
+function ChildView({ child, childStorytimes }) {
     const { id, name, age, storytimes } = child
 
     const storytimeComponents = storytimes.map((storytime) =>
@@ -17,7 +17,7 @@ function ChildView({ child }) {
                 <h1>{name}</h1>
                 <h2>Age: {age}</h2>
                 <h3>Storytimes: </h3>
-                {/* <ul>{storytimeComponents}</ul> */}
+                <ul>{storytimeComponents}</ul>
             </div>
         </div>
     )
