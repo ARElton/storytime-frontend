@@ -5,7 +5,7 @@ import ActivityTile from "./ActivityTile"
 
 function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
     const { id, title, age, genre, time, activities } = storytime
-    const [child, setChild] = useState("")
+    const [ child, setChild ] = useState("")
 
     const activityComponents = activities.map((activity) =>
     <ActivityTile
@@ -14,13 +14,14 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
         />
     )
 
-    function handleSubmit() {
+    function handleSubmit(e) {
+        e.preventDefault()
         const newChildStorytimeObj = {
-            child_id: child.id,
+            child_id: parseInt(child),
             storytime_id: id,
             comment: ""
         }
-        fetch('http://localhost:3000/childstorytimes', {
+        fetch('http://localhost:3000/child_storytimes', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -35,6 +36,7 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
         <div className="storytime-list">
             <div className="storytime-show">
                 <h1>{title}</h1>
+                <h2>{id}</h2>
                 <h3>Age: {age}</h3>
                 <h3>Genre: {genre}</h3>
                 <h3>Minimum Time: {time} minutes</h3>
