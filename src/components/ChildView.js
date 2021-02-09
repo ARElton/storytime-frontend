@@ -4,13 +4,23 @@ import StorytimeTile from './StorytimeTile'
 function ChildView({ child, childStorytimes }) {
     const { id, name, age, storytimes } = child
 
-    const storytimeComponents = storytimes.map((storytime) =>
-    <StorytimeTile
-        key = {storytime.id}
-        storytime = {storytime}
-        />
-    )
+    console.log(storytimes)
+    console.log(childStorytimes)
 
+    const storytimeComponents = childStorytimes.map((childStorytime) => {
+    if (childStorytime.child_id === id) {
+        return(
+        <StorytimeTile
+            key = {childStorytime.id}
+            storytime = {storytimes.find((storytime) => 
+                storytime.id === childStorytime.storytime_id
+            )}
+            comment = {childStorytime.comment}
+        />
+        )
+    }}
+    )
+    
     return (
         <div className="child-list">
             <div className="child-show">

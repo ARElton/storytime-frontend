@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 function StorytimeTile({ storytime, setCurrentStorytime }) {
+    console.log(storytime)
 
     const { id, title, age, genre, time } = storytime
 
     function handleClick() {
         setCurrentStorytime(storytime)
     }
-
     return (
         <li className="storytime-card">
             <div className="storytime-tile-detail">

@@ -18,6 +18,7 @@ function App() {
 const [storytimes, setStorytimes] = useState([])
 const [activities, setActivities] = useState([])
 const [childStorytimes, setChildStorytimes] = useState([])
+const [children, setChildren] = useState([])
 
 // Filter States
 const [currentStorytime, setCurrentStorytime] = useState(null)
@@ -49,6 +50,24 @@ useEffect(() => {
   })
 }, [])
 
+// GET CHILDSTORYTIMES
+useEffect(() => {
+  fetch('http://localhost:3000/child_storytimes')
+  .then((r)=>r.json())
+  .then(allData => {
+    setChildStorytimes(allData)
+  })
+}, [])
+
+// GET CHILDREN
+useEffect(() => {
+  fetch('http://localhost:3000/children')
+  .then((r)=>r.json())
+  .then(allData => {
+    setChildren(allData)
+  })
+}, [])
+
 //--------------Search--------------//
 
 const displayedStorytimes = storytimes 
@@ -67,6 +86,9 @@ function updateChildStorytime(childStorytimeObj) {
   setChildStorytimes([...childStorytimes, childStorytimeObj])
 }
 
+function updateChildren(childObj) {
+  setChildren([...children, childObj])
+}
 
 //--------------Login/Logout--------------//
 
@@ -118,6 +140,8 @@ function handleLogout() {
           <Profile 
             currentUser = {currentUser}
             setCurrentChild = {setCurrentChild}
+            updateChildren = {updateChildren}
+            children = {children}
           />
         </Route>
         <Route path='/storytimes/:id'>

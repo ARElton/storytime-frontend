@@ -5,7 +5,7 @@ import ActivityTile from "./ActivityTile"
 
 function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
     const { id, title, age, genre, time, activities } = storytime
-    const [ child, setChild ] = useState("")
+    const [ child, setChild ] = useState(currentUser.children[0])
 
     const activityComponents = activities.map((activity) =>
     <ActivityTile
@@ -26,10 +26,10 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(newChildStorytimeObj),
+            body: JSON.stringify(newChildStorytimeObj)
         })
         .then(r => r.json())
-        .then(console.log(newChildStorytimeObj))
+        .then(newObj => updateChildStorytime(newObj))
     }
 
     return (
@@ -47,7 +47,7 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
                         <select 
                             name = "children"
                             value = {child}
-                            onChange = {(e) => setChild(e.target.value)}>
+                            onClick = {(e) => setChild(e.target.value)}>
                             {currentUser.children.map((child) =>{ 
                                 return <option key={child.id} value={child.id}>{child.name}</option>})}
                         </select>
