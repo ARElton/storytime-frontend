@@ -149,6 +149,7 @@ function handleLogout() {
             storytime = {currentStorytime}
             currentUser = {currentUser}
             updateChildStorytime = {updateChildStorytime}
+            children = {children}
           />
         </Route>
         <Route path='/activities/:id'>

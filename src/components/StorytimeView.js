@@ -3,9 +3,9 @@ import { useHistory, Link } from 'react-router-dom';
 import ActivityTile from "./ActivityTile"
 
 
-function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
+function StorytimeView({ storytime, currentUser, updateChildStorytime, children }) {
     const { id, title, age, genre, time, activities } = storytime
-    const [ child, setChild ] = useState(currentUser.children[0])
+    const [ child, setChild ] = useState("")
 
     const activityComponents = activities.map((activity) =>
     <ActivityTile
@@ -13,6 +13,10 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
         activity = {activity}
         />
     )
+
+    const userChildren = children.filter((child) => {
+        return child.user_id === currentUser.id
+     })
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -47,8 +51,8 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime }) {
                         <select 
                             name = "children"
                             value = {child}
-                            onClick = {(e) => setChild(e.target.value)}>
-                            {currentUser.children.map((child) =>{ 
+                            onChange = {(e) => setChild(e.target.value)}>
+                            {userChildren.map((child) =>{ 
                                 return <option key={child.id} value={child.id}>{child.name}</option>})}
                         </select>
                         <button type="submit">Add Storytime</button>

@@ -15,7 +15,6 @@ function ChildView({ child, childStorytimes }) {
             storytime = {storytimes.find((storytime) => 
                 storytime.id === childStorytime.storytime_id
             )}
-            comment = {childStorytime.comment}
         />
         )
     }}
