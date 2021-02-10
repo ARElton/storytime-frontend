@@ -164,6 +164,7 @@ function handleLogout() {
             child = {currentChild}
             childStorytimes = {childStorytimes}
             setCurrentStorytime = {setCurrentStorytime}
+            storytimes = {storytimes}
           />
         </Route>
         <div>
