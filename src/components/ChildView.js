@@ -4,8 +4,8 @@ import StorytimeTile from './StorytimeTile'
 function ChildView({ child, childStorytimes }) {
     const { id, name, age, storytimes } = child
 
-    console.log(storytimes)
-    console.log(childStorytimes)
+    // console.log(storytimes)
+    // console.log(childStorytimes)
 
     const storytimeComponents = childStorytimes.map((childStorytime) => {
     if (childStorytime.child_id === id) {
