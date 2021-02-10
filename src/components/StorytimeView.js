@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import { useHistory, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import ActivityTile from "./ActivityTile"
 
 
-function StorytimeView({ storytime, currentUser, updateChildStorytime, children }) {
+function StorytimeView({ storytime, currentUser, updateChildStorytime, children, setCurrentActivity }) {
     const { id, title, age, genre, time, activities } = storytime
     const [ child, setChild ] = useState("")
+    const location = useLocation()
 
     const activityComponents = activities.map((activity) =>
     <ActivityTile
         key = {activity.id}
         activity = {activity}
+        setCurrentActivity = {setCurrentActivity}
         />
     )
 
@@ -40,7 +42,6 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime, children 
         <div className="storytime-list">
             <div className="storytime-show">
                 <h1>{title}</h1>
-                <h2>{id}</h2>
                 <h3>Age: {age}</h3>
                 <h3>Genre: {genre}</h3>
                 <h3>Minimum Time: {time} minutes</h3>

@@ -7,6 +7,7 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, updateChildren
     const [age, setAge] = useState("")
 
     let history = useHistory()
+
     useEffect(() => {
         if (!currentUser) {
             history.push("/")
@@ -16,8 +17,6 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, updateChildren
     const userChildren = children.filter((child) => {
        return child.user_id === currentUser.id
     })
-
-    console.log(userChildren)
 
     const childrenComponents = userChildren.map((child) =>
     <ChildTile

@@ -1,11 +1,8 @@
 import React from "react";
 import StorytimeTile from './StorytimeTile'
 
-function ChildView({ child, childStorytimes }) {
+function ChildView({ child, childStorytimes, setCurrentStorytime }) {
     const { id, name, age, storytimes } = child
-
-    // console.log(storytimes)
-    // console.log(childStorytimes)
 
     const storytimeComponents = childStorytimes.map((childStorytime) => {
     if (childStorytime.child_id === id) {
@@ -15,6 +12,7 @@ function ChildView({ child, childStorytimes }) {
             storytime = {storytimes.find((storytime) => 
                 storytime.id === childStorytime.storytime_id
             )}
+            setCurrentStorytime = {setCurrentStorytime}
         />
         )
     }}

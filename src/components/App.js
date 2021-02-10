@@ -80,7 +80,7 @@ const displayedActivities = activities
     return activity.title.toLowerCase().includes(query.toLowerCase())
   })
 
-//--------------UpdateChildStorytimes--------------//
+//--------------RenderOnDOM--------------//
 
 function updateChildStorytime(childStorytimeObj) {
   setChildStorytimes([...childStorytimes, childStorytimeObj])
@@ -142,6 +142,7 @@ function handleLogout() {
             setCurrentChild = {setCurrentChild}
             updateChildren = {updateChildren}
             children = {children}
+            childStorytimes = {childStorytimes}
           />
         </Route>
         <Route path='/storytimes/:id'>
@@ -150,6 +151,7 @@ function handleLogout() {
             currentUser = {currentUser}
             updateChildStorytime = {updateChildStorytime}
             children = {children}
+            setCurrentActivity = {setCurrentActivity}
           />
         </Route>
         <Route path='/activities/:id'>
@@ -161,6 +163,7 @@ function handleLogout() {
           <ChildView 
             child = {currentChild}
             childStorytimes = {childStorytimes}
+            setCurrentStorytime = {setCurrentStorytime}
           />
         </Route>
         <div>
