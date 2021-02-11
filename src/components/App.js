@@ -167,6 +167,11 @@ function handleLogout() {
             storytimes = {storytimes}
           />
         </Route>
+        <Route exact path='/login'>
+          <Login 
+            setCurrentUser = {setCurrentUser}
+          />
+        </Route>
         <div>
           <button onClick = {handleLogout}>Log out</button>
           <button onClick = {handleLogin}>Log in</button>
