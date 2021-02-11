@@ -16,11 +16,12 @@ function Login({ setCurrentUser }) {
             },
             body: JSON.stringify({ username, password }),
         })
-        .then(r => r.json())
+        .then((r) => r.json())
         .then((data) => {
+            console.log(data)
             setCurrentUser(data.user)
             localStorage.setItem("token", data.token)
-            history.push("/profile")
+            // history.push("/profile")
         })
     }
 

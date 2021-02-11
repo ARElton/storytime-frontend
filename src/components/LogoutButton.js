@@ -1,6 +1,6 @@
 import React from "react";
 
-function LogoutButton({ }) {
+function LogoutButton({ setCurrentUser }) {
 
     function logout() {
         localStorage.removeItem("token")

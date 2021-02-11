@@ -7,6 +7,8 @@ import Profile from "./Profile";
 import StorytimeView from "./StorytimeView";
 import ActivityView from "./ActivityView";
 import ChildView from "./ChildView"
+import Login from "./Login"
+import LogoutButton from "./LogoutButton"
 import '../App.css';
 
 
@@ -95,25 +97,25 @@ function updateChildren(childObj) {
 //---------FOR DEVELOPMENT---------//
 
   // auto-login
-  useEffect(() => {
-    fetch("http://localhost:3000/autologin")
-      .then((r) => r.json())
-      .then(setCurrentUser);
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:3000/autologin")
+  //     .then((r) => r.json())
+  //     .then(setCurrentUser);
+  // }, []);
 
 //---------FOR USE---------//
 
 // Manual Login
-function handleLogin() {
-  fetch("http://localhost:3000/autologin")
-    .then((r) => r.json())
-    .then(setCurrentUser)
-}
+// function handleLogin() {
+//   fetch("http://localhost:3000/autologin")
+//     .then((r) => r.json())
+//     .then(setCurrentUser)
+// }
 
 // Manual Logout
-function handleLogout() {
-  setCurrentUser(null)
-}
+// function handleLogout() {
+//   setCurrentUser(null)
+// }
 
 //--------------Return--------------//
 
@@ -171,12 +173,15 @@ function handleLogout() {
           <Login 
             setCurrentUser = {setCurrentUser}
           />
+          <LogoutButton
+            setCurrentUser = {setCurrentUser}
+          />
         </Route>
-        <div>
+        {/* <div>
           <button onClick = {handleLogout}>Log out</button>
           <button onClick = {handleLogin}>Log in</button>
           {currentUser ? <h1>Welcome, {currentUser.name}</h1> : null}
-        </div>
+        </div> */}
       </Switch>
     </div>   
   );
