@@ -90,6 +90,11 @@ function updateChildren(childObj) {
   setChildren([...children, childObj])
 }
 
+function handleRemovChildStorytime(id) {
+  const newChildStorytimes = childStorytimes.filter((childStorytime) => childStorytime.id !== id)
+  setChildStorytimes(newChildStorytimes)
+}
+
 //--------------Login/Logout--------------//
 
 //---------FOR DEVELOPMENT---------//
@@ -165,6 +170,7 @@ function handleLogout() {
             childStorytimes = {childStorytimes}
             setCurrentStorytime = {setCurrentStorytime}
             storytimes = {storytimes}
+            onRemovChildStorytime = {handleRemovChildStorytime}
           />
         </Route>
         <div>

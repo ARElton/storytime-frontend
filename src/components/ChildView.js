@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import StorytimeTile from './StorytimeTile'
+import StorytimeView from "./StorytimeView";
 
-function ChildView({ child, childStorytimes, setCurrentStorytime, storytimes }) {
+function ChildView({ child, childStorytimes, setCurrentStorytime, storytimes, onRemovChildStorytime }) {
     const { id, name, age  } = child
 
     const storytimeComponents = childStorytimes.map((childStorytime) => {
@@ -13,6 +14,8 @@ function ChildView({ child, childStorytimes, setCurrentStorytime, storytimes }) 
                 storytime.id === childStorytime.storytime_id
             )}
             setCurrentStorytime = {setCurrentStorytime}
+            childStorytime = {childStorytime}
+            onRemovChildStorytime = {onRemovChildStorytime}
         />
         )
     }}
@@ -26,6 +29,7 @@ function ChildView({ child, childStorytimes, setCurrentStorytime, storytimes }) 
                 <h3>Storytimes: </h3>
                 <ul>{storytimeComponents}</ul>
             </div>
+        
         </div>
     )
 
