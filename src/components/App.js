@@ -18,6 +18,7 @@ function App() {
 const [storytimes, setStorytimes] = useState([])
 const [activities, setActivities] = useState([])
 const [childStorytimes, setChildStorytimes] = useState([])
+const [childActivities, setChildActivities] = useState([])
 const [children, setChildren] = useState([])
 
 // Filter States
@@ -59,6 +60,15 @@ useEffect(() => {
   })
 }, [])
 
+// GET CHILDACTIVITIES
+useEffect(() => {
+  fetch('http://localhost:3000/child_activities')
+  .then((r)=>r.json())
+  .then(allData => {
+    setChildActivities(allData)
+  })
+}, [])
+
 // GET CHILDREN
 useEffect(() => {
   fetch('http://localhost:3000/children')
@@ -86,6 +96,10 @@ function updateChildStorytime(childStorytimeObj) {
   setChildStorytimes([...childStorytimes, childStorytimeObj])
 }
 
+function updateChildActivity(childActivityObj) {
+  setChildActivities([...childActivities, childActivityObj])
+}
+
 function updateChildren(childObj) {
   setChildren([...children, childObj])
 }
@@ -93,6 +107,11 @@ function updateChildren(childObj) {
 function handleRemovChildStorytime(id) {
   const newChildStorytimes = childStorytimes.filter((childStorytime) => childStorytime.id !== id)
   setChildStorytimes(newChildStorytimes)
+}
+
+function handleRemoveChildActivity(id) {
+  const newChildActivities = childActivities.filter((childActivity) => childActivity.id !== id)
+  setChildActivities(newChildActivities)
 }
 
 //--------------Login/Logout--------------//
@@ -148,6 +167,7 @@ function handleLogout() {
             updateChildren = {updateChildren}
             children = {children}
             childStorytimes = {childStorytimes}
+            childActivities = {childActivities}
           />
         </Route>
         <Route path='/storytimes/:id'>
@@ -162,15 +182,22 @@ function handleLogout() {
         <Route path='/activities/:id'>
           <ActivityView 
             activity = {currentActivity}
+            currentUser = {currentUser}
+            children = {children}
+            updateChildActivity = {updateChildActivity}
           />
         </Route>
         <Route path='/children/:id'>
           <ChildView 
             child = {currentChild}
             childStorytimes = {childStorytimes}
+            childActivities = {childActivities}
             setCurrentStorytime = {setCurrentStorytime}
+            setCurrentActivity = {setCurrentActivity}
             storytimes = {storytimes}
+            activities = {activities}
             onRemovChildStorytime = {handleRemovChildStorytime}
+            onRemoveChildActivity = {handleRemoveChildActivity}
           />
         </Route>
         <div>

@@ -18,6 +18,7 @@ function StorytimeTile({ storytime, setCurrentStorytime, childStorytime, onRemov
         onRemovChildStorytime(childStorytime.id)
         history.push(`/child/${childStorytime.child_id}`)
     }
+    
     return (
         <li className="storytime-card">
             <div className="storytime-tile-detail">
