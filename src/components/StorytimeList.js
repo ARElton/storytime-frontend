@@ -1,13 +1,14 @@
 import React from "react";
 import StorytimeTile from './StorytimeTile'
 
-function StorytimeList({ storytimes, setCurrentStorytime }) {
+function StorytimeList({ storytimes, setCurrentStorytime, currentUser }) {
 
     const storytimeComponents = storytimes.map((storytime) =>
     <StorytimeTile
         key = {storytime.id}
         storytime = {storytime}
         setCurrentStorytime = {setCurrentStorytime}
+        currentUser = {currentUser}
     />
     )
 

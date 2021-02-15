@@ -1,12 +1,15 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import Search from './Search';
 
 function Header({ query, setQuery, setCurrentUser, currentUser }) {
 
+    const history = useHistory()
+
     function logout() {
         localStorage.removeItem("token")
         setCurrentUser(null)
+        history.push("/storytimes")
     }
 
     return (
@@ -31,9 +34,17 @@ function Header({ query, setQuery, setCurrentUser, currentUser }) {
                 { !currentUser ?
                 <NavLink
                     exact
+                    to="/register"
+                    className="button">
+                    Signup
+                </NavLink>
+                : null }
+                { !currentUser ?
+                <NavLink
+                    exact
                     to="/login"
                     className="button">
-                    Login/Signup
+                    Login
                 </NavLink>
                 :
                 <button onClick={logout}>Logout</button>

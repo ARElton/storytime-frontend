@@ -9,6 +9,7 @@ import ActivityView from "./ActivityView";
 import ChildView from "./ChildView"
 import Login from "./Login"
 import LogoutButton from "./LogoutButton"
+import Signup from "./Signup";
 import '../App.css';
 
 
@@ -125,6 +126,7 @@ useEffect(() => {
           <StorytimeList 
             storytimes = {displayedStorytimes}
             setCurrentStorytime = {setCurrentStorytime}
+            currentUser = {currentUser}
           />
         </Route>
         <Route exact path='/activities'>
@@ -170,6 +172,11 @@ useEffect(() => {
         </Route>
         <Route exact path='/login'>
           <Login 
+            setCurrentUser = {setCurrentUser}
+          />
+        </Route>
+        <Route exact path='/register'>
+          <Signup
             setCurrentUser = {setCurrentUser}
           />
         </Route>

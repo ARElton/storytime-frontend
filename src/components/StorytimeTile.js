@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-function StorytimeTile({ storytime, setCurrentStorytime }) {
+function StorytimeTile({ storytime, setCurrentStorytime, currentUser }) {
     console.log(storytime)
 
     const { id, title, age, genre, time } = storytime
