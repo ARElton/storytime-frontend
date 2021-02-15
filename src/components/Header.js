@@ -1,20 +1,18 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import Search from './Search';
-import Categories from './Categories';
 
-function Header({ query, setQuery }) {
+function Header({ query, setQuery, setCurrentUser, currentUser }) {
+
+    function logout() {
+        localStorage.removeItem("token")
+        setCurrentUser(null)
+    }
 
     return (
         <header>
             <h1>storyTime</h1>
             <nav>
-                <NavLink
-                    exact
-                    to="/login"
-                    className="button">
-                    Login
-                </NavLink>
                 <NavLink 
                     to="/storytimes"
                     className="button">
@@ -30,6 +28,16 @@ function Header({ query, setQuery }) {
                     className="button">
                     Profile
                 </NavLink>
+                { !currentUser ?
+                <NavLink
+                    exact
+                    to="/login"
+                    className="button">
+                    Login/Signup
+                </NavLink>
+                :
+                <button onClick={logout}>Logout</button>
+                }
             </nav>
             <Search 
                 query = {query} 

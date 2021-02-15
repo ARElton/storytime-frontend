@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import StorytimeList from './StorytimeList'
 import ActivityList from './ActivityList'
@@ -92,30 +92,23 @@ function updateChildren(childObj) {
   setChildren([...children, childObj])
 }
 
-//--------------Login/Logout--------------//
+//--------------Autologin--------------//
 
-//---------FOR DEVELOPMENT---------//
-
-  // auto-login
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/autologin")
-  //     .then((r) => r.json())
-  //     .then(setCurrentUser);
-  // }, []);
-
-//---------FOR USE---------//
-
-// Manual Login
-// function handleLogin() {
-//   fetch("http://localhost:3000/autologin")
-//     .then((r) => r.json())
-//     .then(setCurrentUser)
-// }
-
-// Manual Logout
-// function handleLogout() {
-//   setCurrentUser(null)
-// }
+useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    fetch("http://localhost:3000/profile", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((r) => r.json())
+      .then((user) => {
+        setCurrentUser(user);
+      })
+  }
+}, [])
 
 //--------------Return--------------//
 
@@ -124,6 +117,8 @@ function updateChildren(childObj) {
       <Header 
         query = {query} 
         setQuery = {setQuery} 
+        setCurrentUser = {setCurrentUser}
+        currentUser = {currentUser}
       />
       <Switch>
         <Route exact path='/storytimes'>
@@ -139,6 +134,7 @@ function updateChildren(childObj) {
           />
         </Route>
         <Route exact path='/profile'>
+          { currentUser ? (
           <Profile 
             currentUser = {currentUser}
             setCurrentChild = {setCurrentChild}
@@ -146,6 +142,9 @@ function updateChildren(childObj) {
             children = {children}
             childStorytimes = {childStorytimes}
           />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
         <Route path='/storytimes/:id'>
           <StorytimeView 
@@ -173,15 +172,7 @@ function updateChildren(childObj) {
           <Login 
             setCurrentUser = {setCurrentUser}
           />
-          <LogoutButton
-            setCurrentUser = {setCurrentUser}
-          />
         </Route>
-        {/* <div>
-          <button onClick = {handleLogout}>Log out</button>
-          <button onClick = {handleLogin}>Log in</button>
-          {currentUser ? <h1>Welcome, {currentUser.name}</h1> : null}
-        </div> */}
       </Switch>
     </div>   
   );

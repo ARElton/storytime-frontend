@@ -1,18 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
 import ChildTile from './ChildTile';
 
 function Profile({ currentUser, setCurrentChild, childStorytimes, updateChildren, children }) {
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
-
-    let history = useHistory()
-
-    useEffect(() => {
-        if (!currentUser) {
-            history.push("/login")
-        }
-    }, [])
 
     const userChildren = children.filter((child) => {
        return child.user_id === currentUser.id
