@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 function Login({ setCurrentUser }) {
     const [username, setUsername] = useState("")
+    const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const history = useHistory()
 
@@ -21,7 +22,7 @@ function Login({ setCurrentUser }) {
             console.log(data)
             setCurrentUser(data.user)
             localStorage.setItem("token", data.token)
-            // history.push("/profile")
+            history.push("/profile")
         })
     }
 

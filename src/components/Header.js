@@ -11,14 +11,10 @@ function Header({ query, setQuery }) {
             <nav>
                 <NavLink
                     exact
-                    to="/"
+                    to="/login"
                     className="button">
-                    Home
+                    Login
                 </NavLink>
-                <button
-                    className="button">
-                    Categories
-                </button>
                 <NavLink 
                     to="/storytimes"
                     className="button">

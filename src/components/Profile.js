@@ -10,7 +10,7 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, updateChildren
 
     useEffect(() => {
         if (!currentUser) {
-            history.push("/")
+            history.push("/login")
         }
     }, [])
 
