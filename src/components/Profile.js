@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ChildTile from './ChildTile';
 
-function Profile({ currentUser, setCurrentChild, childStorytimes, updateChildren, children }) {
+function Profile({ currentUser, setCurrentChild, childStorytimes, childActivities, updateChildren, children }) {
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
 
@@ -15,6 +15,7 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, updateChildren
         child = {child}
         setCurrentChild = {setCurrentChild}
         childStorytimes = {childStorytimes}
+        childActivities = {childActivities}
         />
     )
 
@@ -56,7 +57,6 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, updateChildren
                     onChange = {(e) => setAge(e.target.value)}
                 />
                  <button type="submit">Add Child</button>
-
             </form>
         </div>
     )

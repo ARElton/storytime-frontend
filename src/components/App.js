@@ -21,6 +21,7 @@ function App() {
 const [storytimes, setStorytimes] = useState([])
 const [activities, setActivities] = useState([])
 const [childStorytimes, setChildStorytimes] = useState([])
+const [childActivities, setChildActivities] = useState([])
 const [children, setChildren] = useState([])
 
 // Filter States
@@ -62,6 +63,15 @@ useEffect(() => {
   })
 }, [])
 
+// GET CHILDACTIVITIES
+useEffect(() => {
+  fetch('http://localhost:3000/child_activities')
+  .then((r)=>r.json())
+  .then(allData => {
+    setChildActivities(allData)
+  })
+}, [])
+
 // GET CHILDREN
 useEffect(() => {
   fetch('http://localhost:3000/children')
@@ -87,6 +97,10 @@ const displayedActivities = activities
 
 function updateChildStorytime(childStorytimeObj) {
   setChildStorytimes([...childStorytimes, childStorytimeObj])
+}
+
+function updateChildActivity(childActivityObj) {
+  setChildActivities([...childActivities, childActivityObj])
 }
 
 function updateChildren(childObj) {
@@ -143,6 +157,7 @@ useEffect(() => {
             updateChildren = {updateChildren}
             children = {children}
             childStorytimes = {childStorytimes}
+            childActivities = {childActivities}
           />
           ) : (
             <Redirect to="/login" />
@@ -160,14 +175,22 @@ useEffect(() => {
         <Route path='/activities/:id'>
           <ActivityView 
             activity = {currentActivity}
+            currentUser = {currentUser}
+            children = {children}
+            updateChildActivity = {updateChildActivity}
           />
         </Route>
         <Route path='/children/:id'>
           <ChildView 
             child = {currentChild}
             childStorytimes = {childStorytimes}
+            childActivities = {childActivities}
             setCurrentStorytime = {setCurrentStorytime}
+            setCurrentActivity = {setCurrentActivity}
             storytimes = {storytimes}
+            activities = {activities}
+            onRemovChildStorytime = {handleRemovChildStorytime}
+            onRemoveChildActivity = {handleRemoveChildActivity}
           />
         </Route>
         <Route exact path='/login'>

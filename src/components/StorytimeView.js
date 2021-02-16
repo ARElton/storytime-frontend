@@ -53,7 +53,7 @@ function StorytimeView({ storytime, currentUser, updateChildStorytime, children,
                             name = "children"
                             value = {child}
                             onChange = {(e) => setChild(e.target.value)}>
-                            {userChildren.map((child) =>{ 
+                            {userChildren.map((child) => { 
                                 return <option key={child.id} value={child.id}>{child.name}</option>})}
                         </select>
                         <button type="submit">Add Storytime</button>
