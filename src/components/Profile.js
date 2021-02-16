@@ -34,6 +34,8 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, childActivitie
         })
         .then(r => r.json())
         .then(newObj => updateChildren(newObj))
+        setName('')
+        setAge('')
     }
 
     return (
