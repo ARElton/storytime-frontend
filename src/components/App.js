@@ -8,7 +8,6 @@ import StorytimeView from "./StorytimeView";
 import ActivityView from "./ActivityView";
 import ChildView from "./ChildView"
 import Login from "./Login"
-import LogoutButton from "./LogoutButton"
 import Signup from "./Signup";
 import '../App.css';
 
@@ -117,6 +116,28 @@ function handleRemoveChildActivity(id) {
   setChildActivities(newChildActivities)
 }
 
+function handleEditedCAComment(editedCAComment) {
+  const updatedCAList = childActivities.map((childActivity) => {
+    if (childActivity.id === editedCAComment.id) {
+      return editedCAComment
+    } else {
+      return childActivity
+    }
+    })
+  setChildActivities(updatedCAList)
+}
+
+function handleEditedCSComment(editedCSComment) {
+  const updatedCSList = childStorytimes.map((childStorytime) => {
+    if (childStorytime.id === editedCSComment.id) {
+      return editedCSComment
+    } else {
+      return childStorytime
+    }
+    })
+  setChildStorytimes(updatedCSList)
+}
+
 //--------------Autologin--------------//
 
 useEffect(() => {
@@ -151,6 +172,7 @@ useEffect(() => {
             storytimes = {displayedStorytimes}
             setCurrentStorytime = {setCurrentStorytime}
             currentUser = {currentUser}
+            
           />
         </Route>
         <Route exact path='/activities'>
@@ -201,6 +223,8 @@ useEffect(() => {
             activities = {activities}
             onRemovChildStorytime = {handleRemovChildStorytime}
             onRemoveChildActivity = {handleRemoveChildActivity}
+            onEditedCAComment = {handleEditedCAComment}
+            onEditedCSComment = {handleEditedCSComment}
           />
         </Route>
         <Route exact path='/login'>
