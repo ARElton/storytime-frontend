@@ -107,6 +107,16 @@ function updateChildren(childObj) {
   setChildren([...children, childObj])
 }
 
+function handleRemovChildStorytime(id) {
+  const newChildStorytimes = childStorytimes.filter((childStorytime) => childStorytime.id !== id)
+  setChildStorytimes(newChildStorytimes)
+}
+
+function handleRemoveChildActivity(id) {
+  const newChildActivities = childActivities.filter((childActivity) => childActivity.id !== id)
+  setChildActivities(newChildActivities)
+}
+
 //--------------Autologin--------------//
 
 useEffect(() => {
