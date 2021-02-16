@@ -34,7 +34,6 @@ function ActivityView({ activity, currentUser, children, updateChildActivity }) 
                 <h1>{title}</h1>
                 <h2>Category: {category.category}</h2>
                 <p>{description}</p>
-                <p>Resource: {link}</p>
                 <form className="add-childactivity-form" onSubmit = {handleSubmit}>
                     <h3>Add Activity:</h3>
                     <div className="child-div">
@@ -49,6 +48,30 @@ function ActivityView({ activity, currentUser, children, updateChildActivity }) 
                         <button type="submit">Add Activity</button>
                     </div>
                 </form>
+                <p>Resource:</p>
+                <div
+                    className="video"
+                    style={{
+                        position: "relative",
+                        paddingBottom: "56.25%",
+                        paddingTop: 25,
+                        height: 0
+                    }}
+                >
+                    <iframe
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%"
+                        }}
+                        src={link}
+                        frameBorder="0"
+                        title="video"
+                        allowFullScreen
+                    />
+                </div>
             </div>
         </div>
     )
