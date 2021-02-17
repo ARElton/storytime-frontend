@@ -39,7 +39,6 @@ function ActivityTile({ activity, setCurrentActivity, childActivity, onRemoveChi
             <div className="activity-tile-detail">
                 <h1>{title}</h1>
                 <h2>Category: {category.category} </h2>
-                <p>Description: {description}</p>
                 <Link to={`/activities/${id}`}>
                   <button onClick={handleClick} className="activity-button">Details</button>
                 </Link>

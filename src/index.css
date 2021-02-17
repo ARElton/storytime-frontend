@@ -60,6 +60,9 @@ header input {
   color: black;
   background-color: #faf9f9;
   border: .5px solid #3150A2;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 100%;
 }
 ::placeholder {
   color: grey;
@@ -115,7 +118,7 @@ button:active {
   padding: 10px;
   border-radius: 0px;
   width: 250px;
-  height: 300px;
+  height: 250px;
   background-color: #edddd4;
 }
 .storytime-card-detail {
@@ -168,7 +171,7 @@ button:active {
   border-radius: 0px;
   width: 250px;
   background-color: #edddd4;
-  height: fit-content;
+  height: 250px;
 }
 .activity-card-detail {
   margin: 5px;
@@ -192,4 +195,58 @@ button:active {
 }
 .activity-button:hover {
   background-color: #edddd4;
+}
+
+/*------ Login -------*/
+.login-form {
+  margin: 70px;
+  align-items: left;
+}
+.login-form h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  margin-top: 0%;
+  padding: 5px;
+  text-align: left;
+}
+.login-form label {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+.login-form-button {
+  padding: 5px;
+  margin: 4px;
+  background-color: #F9F4F1;
+  color: black;
+	border-radius: 0%;
+  cursor:pointer;
+  border: transparent;
+  font-size: 20px;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+}
+.login-form-button:hover {
+  background-color: #edddd4;
+}
+.login-form-input {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 100%;
+  width: 75%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  background-color: #faf9f9;
+  border: none;
+  outline: none;
 }

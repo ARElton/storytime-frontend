@@ -29,24 +29,28 @@ function Login({ setCurrentUser }) {
     return (
         <div>
             <form className="login-form" onSubmit={handleSubmit}>
-                <h1>Login</h1>
-                <label htmlFor="username">Username</label>
+                <h1>Welcome Back!</h1>
+                <label htmlFor="username">Username:</label>
                 <input 
+                    className = "login-form-input"
+                    placeholder = "Username"
                     type = "text"
                     id = "username"
                     autoComplete = "off"
                     value = {username}
                     onChange = {(e) => setUsername(e.target.value)}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password:</label>
                 <input
+                    className = "login-form-input"
+                    placeholder = "Password"
                     type = "password"
                     id = "password"
                     value = {password}
                     onChange = {(e) => setPassword(e.target.value)}
                     autoComplete = "current-password"
                 />
-                <input type="submit" value="Login" />
+                <input className="login-form-button" type="submit" value="Login" />
             </form>
         </div>
     )
