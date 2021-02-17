@@ -45,7 +45,7 @@ function StorytimeTile({ storytime, setCurrentStorytime, childStorytime, onRemov
                 <Link to={`/storytimes/${id}`}>
                   <button onClick={handleClick} className="storytime-button">Details</button>
                 </Link>
-                {(location.pathname === `/storytimes`) ? 
+                {(location.pathname === `/storytimes`) || (location.pathname === '/storytimes/*') ? 
                 null : 
                 <div>
                 <button onClick={handleDelete} value="delete" className="delete-button">Delete</button>

@@ -6,6 +6,7 @@ function ActivityTile({ activity, setCurrentActivity, childActivity, onRemoveChi
     const { id, title, description, link, image, category } = activity
     const location = useLocation()
     const [newComment, setNewComment] = useState("")
+    let reg = new RegExp('/storytimes/*')
 
     function handleClick() {
         setCurrentActivity(activity)
@@ -44,6 +45,7 @@ function ActivityTile({ activity, setCurrentActivity, childActivity, onRemoveChi
                 </Link>
                 {(location.pathname === `/activities`) ? 
                 null : 
+                (reg.test(location.pathname)) ? null :
                 <div>
                     <button onClick={handleDelete} value="delete" className="delete-button">Delete</button>
                     <form>

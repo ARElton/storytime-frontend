@@ -10,9 +10,10 @@ Apricot #ffd6ba;
 /*----- BODY -----*/
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
   color: black;
-  background-color:faf9f9;
+  font-weight: 300;
+  background-color: #F3E8E2;
 }
 
 .big-container {
@@ -24,9 +25,14 @@ body {
 }
 
 /*----- HEADER -----*/
+
+header img {
+  max-width: max-content;
+  max-height: 100px;
+  float:inline-start;
+}
 header {
-  background:#89b0ae;
-  padding: 5px;
+  background: #F3E8E2;
   margin: 5px;
   border-radius: 10px;
   width: 97.5%;
@@ -34,10 +40,13 @@ header {
   text-align: center;
 }
 header h1 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: #555b6e;
-  font-size: 60px;
-  margin: 5px;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  color: #3150A2;
+  font-size: 50px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  margin-top: 0%;
   padding: 5px;
 }
 ::placeholder {
@@ -50,27 +59,37 @@ header input {
   margin: 5px;
   color: black;
   background-color: #faf9f9;
-  border: .5px solid #89b0ae;
+  border: .5px solid #3150A2;
+}
+::placeholder {
+  color: grey;
 }
 .button {
-  background-color: #555b6e;
-  margin: 1px;
+  background-color: #F9F4F1;
+  margin: 20px;
 	border-radius:5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 	display:inline-block;
-	cursor:pointer;
-  color:#faf7f3;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #3150A2;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 200;
-  padding: 5px 20px;
+  letter-spacing: 0.05em;
   text-decoration: none;
+  border-radius: 0%;
+  border: transparent;
+  cursor: default;
 }
 .button:hover {
-  background-color: #283d3b;
+  background-color: #edddd4;
 }
 button:active {
   position: relative;
   top: 1px; 
+  background-color: #F3E8E2;
 }
 
 /*------ StorytimeList -------*/
@@ -82,7 +101,6 @@ button:active {
   padding: 15px; 
   margin: 0px;
   border-radius: 10px;
-  border: .5px solid #89b0ae;
 }
 
 /*------ StorytimeTile -------*/
@@ -93,12 +111,12 @@ button:active {
 }
 .storytime-card {
   list-style-type: none;
-  margin: 5px;
+  margin: 10px;
   padding: 10px;
-  border-radius: 10px;
-  border: .5px solid #89b0ae;
+  border-radius: 0px;
   width: 250px;
   height: 300px;
+  background-color: #edddd4;
 }
 .storytime-card-detail {
   margin: 5px;
@@ -114,11 +132,14 @@ button:active {
 .storytime-button {
   padding: 5px 5px;
   margin: 4px 2px;
-  border: .5px solid #283d3b;
-  background-color: #555b6e;
-  color:#faf9f9;
-	border-radius:5px;
+  background-color: #F9F4F1;
+  color: #3150A2;
+	border-radius: 0%;;
   cursor:pointer;
+  border: transparent;
+}
+.storytime-button:hover {
+  background-color: #edddd4;
 }
 
 /*------ StorytimeView -------*/
@@ -132,7 +153,6 @@ button:active {
   padding: 15px; 
   margin: 0px;
   border-radius: 10px;
-  border: .5px solid #89b0ae;
 }
 
 /*------ ActivityTile -------*/
@@ -143,11 +163,11 @@ button:active {
 }
 .activity-card {
   list-style-type: none;
-  margin: 5px;
+  margin: 10px;
   padding: 10px;
-  border-radius: 10px;
-  border: .5px solid #89b0ae;
+  border-radius: 0px;
   width: 250px;
+  background-color: #edddd4;
   height: fit-content;
 }
 .activity-card-detail {
@@ -164,9 +184,12 @@ button:active {
 .activity-button {
   padding: 5px 5px;
   margin: 4px 2px;
-  border: .5px solid #283d3b;
-  background-color: #555b6e;
-  color:#faf9f9;
-	border-radius:5px;
+  background-color: #F9F4F1;
+  color: #3150A2;
+	border-radius: 0%;;
   cursor:pointer;
+  border: transparent;
+}
+.activity-button:hover {
+  background-color: #edddd4;
 }

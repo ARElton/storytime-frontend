@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useHistory } from 'react-router-dom';
 import Search from './Search';
+import styled from "styled-components";
 
 function Header({ query, setQuery, setCurrentUser, currentUser }) {
 
@@ -14,7 +15,7 @@ function Header({ query, setQuery, setCurrentUser, currentUser }) {
 
     return (
         <header>
-            <h1>storyTime</h1>
+            <h1>StoryTime</h1>
             <nav>
                 <NavLink 
                     to="/storytimes"
@@ -36,7 +37,7 @@ function Header({ query, setQuery, setCurrentUser, currentUser }) {
                     exact
                     to="/register"
                     className="button">
-                    Signup
+                    SignUp
                 </NavLink>
                 : null }
                 { !currentUser ?
@@ -47,13 +48,14 @@ function Header({ query, setQuery, setCurrentUser, currentUser }) {
                     Login
                 </NavLink>
                 :
-                <button onClick={logout}>Logout</button>
+                <button className="button" onClick={logout}>Logout</button>
                 }
             </nav>
             <Search 
                 query = {query} 
                 setQuery = {setQuery}
             />
+            <img src ="/bookshelf.png" alt="books" />
         </header>
     )
 
