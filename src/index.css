@@ -106,6 +106,17 @@ button:active {
   border-radius: 10px;
 }
 
+.storytime-list h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 40px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+
 /*------ StorytimeTile -------*/
 .storytime-card-list {
   display: flex;
@@ -128,15 +139,32 @@ button:active {
   align-items: center;
 }
 .storytime-tile-detail h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
   font-size: 2em;
+  color: #2a324b;
   margin: 5px;
   margin-bottom: 1px;
+  text-align: center;
+}
+.storytime-tile-detail h2 {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+}
+.storytime-tile-detail p {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  color: #2a324b;
+  font-size: 15px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
 }
 .storytime-button {
   padding: 5px 5px;
   margin: 4px 2px;
   background-color: #F9F4F1;
-  color: #3150A2;
+  color: #2a324b;
 	border-radius: 0%;;
   cursor:pointer;
   border: transparent;
@@ -147,6 +175,7 @@ button:active {
 
 /*------ StorytimeView -------*/
 
+
 /*------ ActivityList -------*/
 .activity-list {
   display: flex;
@@ -156,6 +185,16 @@ button:active {
   padding: 15px; 
   margin: 0px;
   border-radius: 10px;
+}
+.activity-list h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 40px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
 }
 
 /*------ ActivityTile -------*/
@@ -180,15 +219,25 @@ button:active {
   align-items: center;
 }
 .activity-tile-detail h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
   font-size: 2em;
+  color: #2a324b;
   margin: 5px;
   margin-bottom: 1px;
+  text-align: center;
+}
+.activity-tile-detail h2 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
 }
 .activity-button {
   padding: 5px 5px;
   margin: 4px 2px;
   background-color: #F9F4F1;
-  color: #3150A2;
+  color: #2a324b;
 	border-radius: 0%;;
   cursor:pointer;
   border: transparent;
@@ -250,3 +299,4 @@ button:active {
   border: none;
   outline: none;
 }
+
