@@ -43,7 +43,7 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, childActivitie
             <h1>{currentUser.name}'s Children</h1>
             <ul className="child-card-list">{childrenComponents}</ul>
             <form className="add-child-form" onSubmit={handleSubmit}>
-                <h1>Add A Child</h1>
+                <h1>Add A Child:</h1>
                 <input 
                     type = "text"
                     name = "name"
@@ -58,6 +58,7 @@ function Profile({ currentUser, setCurrentChild, childStorytimes, childActivitie
                     value = {age}
                     onChange = {(e) => setAge(e.target.value)}
                 />
+                <br />
                  <button type="submit">Add Child</button>
             </form>
         </div>

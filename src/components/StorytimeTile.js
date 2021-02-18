@@ -51,8 +51,7 @@ function StorytimeTile({ storytime, setCurrentStorytime, childStorytime, onRemov
                 <button onClick={handleDelete} value="delete" className="delete-button">Delete</button>
                 {childStorytime.comment === "" ?
                     <>
-                    <form>
-                        <label>Comment:</label>
+                    <form className="activity-comment-form">
                         <input
                             className="activity-comment"
                             type="text"
@@ -62,7 +61,9 @@ function StorytimeTile({ storytime, setCurrentStorytime, childStorytime, onRemov
                             onChange={(e) => setNewComment(e.target.value)}
                         />
                     </form>
-                    <button className="add-comment" onClick={handleEdit} value="edit">Add Comment</button></> : null}
+                    <button className="add-comment" onClick={handleEdit} value="edit">Add Comment</button></> 
+                    : 
+                    <p>{childStorytime.comment}</p>}
                 </div>}
             </div>
         </li>

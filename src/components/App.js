@@ -9,6 +9,7 @@ import ActivityView from "./ActivityView";
 import ChildView from "./ChildView"
 import Login from "./Login"
 import Signup from "./Signup";
+import Background from "../img/background.jpg"
 import '../App.css';
 
 
@@ -159,7 +160,8 @@ useEffect(() => {
 //--------------Return--------------//
 
   return (
-    <div className="big-container">
+    <div className="big-container"
+      style = {{backgroundImage: "url(../img/background.jpg)"}}>
       <Header 
         query = {query} 
         setQuery = {setQuery} 

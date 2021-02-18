@@ -28,11 +28,11 @@ function Signup({ setCurrentUser }) {
 
     return (
         <div>
-            <form className="login-form" onSubmit={handleSubmit}>
+            <form className="signup-form" onSubmit={handleSubmit}>
                 <h1>Hello & Welcome!</h1>
-                <label htmlFor="username">Username:</label>
+                <label htmlFor="username">Username: </label>
                 <input 
-                    className = "login-form-input"
+                    className = "signup-form-input"
                     type = "text"
                     placeholder = "Username"
                     id = "username"
@@ -40,10 +40,9 @@ function Signup({ setCurrentUser }) {
                     value = {username}
                     onChange = {(e) => setUsername(e.target.value)}
                 />
-                <br />
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Name:  </label>
                 <input 
-                    className = "login-form-input"
+                    className = "signup-form-input"
                     type = "text"
                     placeholder = "Name"
                     id = "name"
@@ -51,10 +50,9 @@ function Signup({ setCurrentUser }) {
                     value = {name}
                     onChange = {(e) => setName(e.target.value)}
                 />
-                <br />
                 <label htmlFor="password">Password:</label>
                 <input
-                    className = "login-form-input"
+                    className = "signup-form-input"
                     type = "password"
                     placeholder = "Password"
                     id = "password"
@@ -62,7 +60,8 @@ function Signup({ setCurrentUser }) {
                     onChange = {(e) => setPassword(e.target.value)}
                     autoComplete = "current-password"
                 />
-                <input className="login-form-button" type="submit" value="Signup" />
+                <br />
+                <input className="signup-form-button" type="submit" value="Signup" />
             </form>
         </div>
     )

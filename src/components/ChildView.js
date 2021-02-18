@@ -61,15 +61,11 @@ function ChildView({ child, childStorytimes, childActivities, setCurrentStorytim
         <div className="child-list">
             <div className="child-show">
                 <h1>{name}</h1>
-                <h2>Age: {age}</h2>
-                <h3>Storytimes: </h3>
-                <ul>{storytimeComponents}{storytimeCommentComponents}</ul>
-                <h3>Activities:</h3>
-                <ul>{activityComponents}{activityCommentComponents}</ul>
-                {/* <h3>Activity Comments:</h3>
-                <ul>{activityCommentComponents}</ul>
-                <h3>Storytime Comments:</h3>
-                <ul>{storytimeCommentComponents}</ul> */}
+                <h1>Age: {age}</h1>
+                <h1>Storytimes: </h1>
+                <ul>{storytimeComponents}</ul>
+                <h1>Activities:</h1>
+                <ul>{activityComponents}</ul>
             </div>
         </div>
     )

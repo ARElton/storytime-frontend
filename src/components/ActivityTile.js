@@ -46,9 +46,10 @@ function ActivityTile({ activity, setCurrentActivity, childActivity, onRemoveChi
                 null : 
                 (reg.test(location.pathname)) ? null :
                 <div>
-                    <button onClick={handleDelete} value="delete" className="delete-button">Delete</button>
-                    <form>
-                        <label>Comment:</label>
+                <button onClick={handleDelete} value="delete" className="delete-button">Delete</button>
+                    {childActivity.comment === "" ?
+                    <> 
+                    <form className="activity-comment-form">
                         <input
                             className="activity-comment"
                             type="text"
@@ -58,7 +59,10 @@ function ActivityTile({ activity, setCurrentActivity, childActivity, onRemoveChi
                             onChange={(e) => setNewComment(e.target.value)}
                         />
                     </form>
-                    <button className="add-comment" onClick={handleEdit} value="edit">Add Comment</button>
+                    <button className="add-comment" onClick={handleEdit} value="edit">Add Comment</button></>
+                    :
+                    <p>{childActivity.comment}</p>
+                    }
                 </div>}
             </div>
         </li>

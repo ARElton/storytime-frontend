@@ -13,7 +13,7 @@ body {
   font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
   color: black;
   font-weight: 300;
-  background-color: #F3E8E2;
+  background-image: url("./img/background.jpg");
 }
 
 .big-container {
@@ -32,7 +32,7 @@ header img {
   float:inline-start;
 }
 header {
-  background: #F3E8E2;
+  background: rgb(243, 232, 226, 0.9);
   margin: 5px;
   border-radius: 10px;
   width: 97.5%;
@@ -40,8 +40,8 @@ header {
   text-align: center;
 }
 header h1 {
-  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
-  color: #3150A2;
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
   font-size: 50px;
   font-weight: 200;
   letter-spacing: 0.1em;
@@ -63,6 +63,7 @@ header input {
   font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
   letter-spacing: 0.1em;
   font-size: 100%;
+  outline: none;
 }
 ::placeholder {
   color: grey;
@@ -129,8 +130,8 @@ button:active {
   padding: 10px;
   border-radius: 0px;
   width: 250px;
-  height: 250px;
-  background-color: #edddd4;
+  height: 310px;
+  background: rgb(243, 232, 226, 0.85);
 }
 .storytime-card-detail {
   margin: 5px;
@@ -168,13 +169,107 @@ button:active {
 	border-radius: 0%;;
   cursor:pointer;
   border: transparent;
+  letter-spacing: 0.1em;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
 }
 .storytime-button:hover {
-  background-color: #edddd4;
+  background-color: #E1C9B7;
+}
+.delete-button {
+  padding: 5px 5px;
+  margin: 4px 2px;
+  background-color: #DC887F;
+  color: #2a324b;
+	border-radius: 0%;;
+  cursor:pointer;
+  border: transparent;
+  letter-spacing: 0.1em;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+}
+.delete-button:hover {
+  background-color: #B03D30;
 }
 
 /*------ StorytimeView -------*/
-
+.storytime-show h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 40px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+}
+.storytime-show h2 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+.storytime-show h3 {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+}
+/*------ AddChildStorytimeForm -------*/
+.add-childstorytime-form {
+  background: rgb(243, 232, 226, 0.85);
+  padding-bottom: 5px;
+}
+.add-childstorytime-form h3{
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+}
+.add-childstorytime-form button {
+  padding: 5px 5px;
+  margin: 4px 2px;
+  background-color: #F9F4F1;
+  color: #2a324b;
+	border-radius: 0%;;
+  cursor:pointer;
+  border: transparent;
+}
+.add-childstorytime-form button:hover {
+  background-color: #E1C9B7;
+}
+.add-childstorytime-form label {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+.add-childstorytime-form select {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 100%;
+  width: 20%;
+  padding: 12px;
+  margin: 10px;
+  box-sizing: border-box;
+  background-color: #faf9f9;
+  border: none;
+  outline: none;
+}
 
 /*------ ActivityList -------*/
 .activity-list {
@@ -185,6 +280,7 @@ button:active {
   padding: 15px; 
   margin: 0px;
   border-radius: 10px;
+  width: fit-content;
 }
 .activity-list h1 {
   font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
@@ -209,7 +305,7 @@ button:active {
   padding: 10px;
   border-radius: 0px;
   width: 250px;
-  background-color: #edddd4;
+  background: rgb(243, 232, 226, 0.85);
   height: 250px;
 }
 .activity-card-detail {
@@ -241,8 +337,248 @@ button:active {
 	border-radius: 0%;;
   cursor:pointer;
   border: transparent;
+  letter-spacing: 0.1em;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
 }
 .activity-button:hover {
+  background-color: #E1C9B7;
+}
+
+/*------ ActivityView -------*/
+.activity-show h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 40px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+.activity-show h2 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+.activity-show p {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+}
+
+/*------ AddChildActivityForm -------*/
+.add-childactivity-form {
+  background: rgb(243, 232, 226, 0.85);
+  padding-bottom: 5px;
+}
+.add-childactivity-form h3{
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+}
+.add-childactivity-form button {
+  padding: 5px 5px;
+  margin: 4px 2px;
+  background-color: #F9F4F1;
+  color: #2a324b;
+	border-radius: 0%;;
+  cursor:pointer;
+  border: transparent;
+}
+.add-childactivity-form button:hover {
+  background-color: #E1C9B7;
+}
+.add-childactivity-form label {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+.add-childactivity-form select {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 100%;
+  width: 20%;
+  padding: 12px;
+  margin: 10px;
+  box-sizing: border-box;
+  background-color: #faf9f9;
+  border: none;
+  outline: none;
+}
+
+/*------ Profile -------*/
+.child-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px; 
+  margin: 0px;
+  border-radius: 10px;
+}
+.child-list h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 40px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+
+
+/*------ ChildTile -------*/
+.child-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.child-card {
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 0px;
+  width: 250px;
+  background: rgb(243, 232, 226, 0.85);
+  height: 150px;
+}
+.child-tile-detail h1 {
+font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  font-size: 2em;
+  color: #2a324b;
+  margin: 5px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+.child-tile-detail h2 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+}
+.children-button {
+  padding: 5px 5px;
+  margin: 4px 2px;
+  background-color: #F9F4F1;
+  color: #2a324b;
+	border-radius: 0%;;
+  cursor:pointer;
+  border: transparent;
+  letter-spacing: 0.1em;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+}
+.children-button:hover {
+  background-color: #E1C9B7;
+}
+/*------ AddChildForm -------*/
+.add-child-form {
+  margin: 40px;
+  align-items: left;
+}
+.add-child-form h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  font-size: 2em;
+  color: #2a324b;
+  margin: 5px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+.add-child-form input {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 100%;
+  width: 75%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  background-color: #faf9f9;
+  border: none;
+  outline: none;
+}
+.add-child-form button {
+  padding: 5px 5px;
+  margin: 4px 2px;
+  background-color: #F9F4F1;
+  color: #2a324b;
+	border-radius: 0%;;
+  cursor:pointer;
+  border: transparent;
+  letter-spacing: 0.1em;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+}
+.add-child-form button:hover {
+  background-color: #edddd4;
+}
+/*------ ChildView -------*/
+.child-show h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  font-size: 2em;
+  color: #2a324b;
+  margin: 5px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+.child-show h2 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+}
+.child-show ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.activity-comment-form input {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 100%;
+  width: 75%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  background-color: #faf9f9;
+  border: none;
+  outline: none;
+  height: 20px;
+
+}
+.add-comment {
+  padding: 5px;
+  margin: 4px;
+  background-color: #F9F4F1;
+  color: black;
+	border-radius: 0%;
+  cursor:pointer;
+  border: transparent;
+  font-size: 13px;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+}
+.add-comment:hover {
   background-color: #edddd4;
 }
 
@@ -300,3 +636,57 @@ button:active {
   outline: none;
 }
 
+/*------ Signup -------*/
+.signup-form {
+  margin: 70px;
+  text-align: left;
+}
+.signup-form h1 {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  margin-top: 0%;
+  padding: 5px;
+  text-align: left;
+}
+.signup-form label {
+  font-family: "Canela Web", "Big Caslon", "Times New Roman", Times, serif;
+  color: #2a324b;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 20px;
+  padding: 5px;
+  text-align: left;
+}
+.signup-form-button {
+  padding: 5px;
+  margin: 4px;
+  background-color: #F9F4F1;
+  color: black;
+	border-radius: 0%;
+  cursor:pointer;
+  border: transparent;
+  font-size: 20px;
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+}
+.signup-form-button:hover {
+  background-color: #edddd4;
+}
+.signup-form-input {
+  font-family: GT Pressura Web, Arial Narrow, Arial, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 100%;
+  width: 75%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  background-color: #faf9f9;
+  border: none;
+  outline: none;
+  align-items: center;
+}
