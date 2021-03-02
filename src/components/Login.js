@@ -19,7 +19,6 @@ function Login({ setCurrentUser }) {
         })
         .then((r) => r.json())
         .then((data) => {
-            console.log(data)
             setCurrentUser(data.user)
             localStorage.setItem("token", data.token)
             history.push("/profile")
