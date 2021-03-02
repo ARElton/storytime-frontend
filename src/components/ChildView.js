@@ -4,9 +4,7 @@ import StorytimeTile from './StorytimeTile'
 
 function ChildView({ child, childStorytimes, childActivities, setCurrentStorytime, setCurrentActivity, storytimes, activities, onRemovChildStorytime, onRemoveChildActivity, onEditedCAComment, onEditedCSComment, childActivity }) {
     const { id, name, age  } = child
-    console.log(childStorytimes)
-    console.log(childActivities)
-
+    
     const storytimeComponents = childStorytimes.map((childStorytime) => {
     if (childStorytime.child_id === id) {
         return(
@@ -41,22 +39,6 @@ function ChildView({ child, childStorytimes, childActivities, setCurrentStorytim
         }
     })
 
-    const activityCommentComponents = childActivities.map((childActivity) => {
-        if (childActivity.child_id === id) {
-            return(
-                <li>{childActivity.comment}</li>
-            )
-        }
-    })
-
-    const storytimeCommentComponents = childStorytimes.map((childStorytime) => {
-        if (childStorytime.child_id === id) {
-            return(
-                <li>{childStorytime.comment}</li>
-            )
-        }
-    })
-    
     return (
         <div className="child-list">
             <div className="child-show">
