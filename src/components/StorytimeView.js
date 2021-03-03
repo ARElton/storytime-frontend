@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { useLocation } from 'react-router-dom';
 import ActivityTile from "./ActivityTile"
-
 
 function StorytimeView({ storytime, currentUser, updateChildStorytime, children, setCurrentActivity }) {
     const { id, title, age, genre, time, activities } = storytime
     const [ child, setChild ] = useState("")
-    const location = useLocation()
 
     const activityComponents = activities.map((activity) =>
     <ActivityTile

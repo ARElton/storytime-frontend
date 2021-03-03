@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { useLocation } from 'react-router-dom';
 
 function ActivityView({ activity, currentUser, children, updateChildActivity }) {
-    const { id, title, description, link, image, category } = activity
+    const { id, title, description, link, category } = activity
     const [ child, setChild ] = useState("")
-    const location = useLocation()
 
     const userChildren = children.filter((child) => {
         return child.user_id === currentUser.id

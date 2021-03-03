@@ -9,7 +9,6 @@ import ActivityView from "./ActivityView";
 import ChildView from "./ChildView"
 import Login from "./Login"
 import Signup from "./Signup";
-import Background from "../img/background.jpg"
 import '../App.css';
 
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, useHistory } from 'react-router-dom';
 import Search from './Search';
-import styled from "styled-components";
 
 function Header({ query, setQuery, setCurrentUser, currentUser }) {
 
